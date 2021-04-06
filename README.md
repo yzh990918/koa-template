@@ -59,6 +59,13 @@ Listening the 3000 port
 
 ## TODO
 
+### doc
+
+- [ ] update README doc
+- [ ] add Swagger api doc plugin
+
+### api feature
+
 **user**
 
 - [x] register a user
