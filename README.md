@@ -57,6 +57,28 @@ Listening the 3000 port
 - static： statric resource
 - app.js: Entrance to the file
 
+## TODO
+
+**user**
+
+- [x] register a user
+- [x] user login width double token
+- [ ] verify a token
+- [ ] delete a user
+- [ ] list page of Users
+- [ ] update a user
+- [ ] show a user
+- [ ] show current userInfo
+- [ ] update password
+
+**upload**
+
+- [ ] upload file
+- [ ] upload fileList
+- [ ] destory a file
+- [ ] get a file 
+- [ ] show parge of files
+
 ## 🔏 How to use it
 
 1. configuration `Mongoose.js` connect mongodb,create `Schema`，export `Model`

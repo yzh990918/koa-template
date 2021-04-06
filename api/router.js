@@ -8,8 +8,9 @@ class InitManager {
     InitManager.initLoadRouters()
     InitManager.LoadConfig()
   }
+  // 自动装入容器
   static initLoadRouters() {
-    const path = `${process.cwd()}/api/v1`
+    const path = `${process.cwd()}/api/routes`
     requireDirectory(module, path, {
       visit: whenLoadModule
     })
