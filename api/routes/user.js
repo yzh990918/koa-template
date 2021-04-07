@@ -13,4 +13,17 @@ router.post('/register',UserController.register)
 // 登录
 router.post('/login',UserController.login)
 
+// 验证token是否有效
+
+router.get('/verify',UserController.verify)
+
+// 更改密码
+
+router.put('/repassword',UserController.updatePwd)
+
+// 获取当前登录用户信息
+
+router.get('/getUserInfo',UserController.getUserInfo)
+
+
 module.exports = router

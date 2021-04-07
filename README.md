@@ -70,13 +70,13 @@ Listening the 3000 port
 
 - [x] register a user
 - [x] user login width double token
-- [ ] verify a token
-- [ ] delete a user
-- [ ] list page of Users
-- [ ] update a user
-- [ ] show a user
-- [ ] show current userInfo
-- [ ] update password
+- [x] verify a token
+- [x] delete a user
+- [x] list page of Users
+- [x] update a user
+- [x] show a user
+- [x] show current userInfo
+- [x] update password
 
 **upload**
 
