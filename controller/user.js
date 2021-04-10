@@ -6,7 +6,7 @@ const {
   TokenValidator,
   PasswordValidator,
 } = require('../validator/validator')
-const {getTokenPayload} = require('../util/token')
+const { getTokenPayload } = require('../util/token')
 class UserController {
   constructor() {}
   // 注册
@@ -47,8 +47,8 @@ class UserController {
     const payload = v.data.body
     const AuthHeader = ctx.request.header.authorization
     const tokenPayload = await getTokenPayload(AuthHeader)
-    const res = await userService.modifyPwd(payload,tokenPayload._id)
-    if(res){
+    const res = await userService.modifyPwd(payload, tokenPayload._id)
+    if (res) {
       ctx.body = successResponse('修改密码成功')
     }
   }
@@ -58,8 +58,8 @@ class UserController {
     const AuthHeader = ctx.request.header.authorization
     const payload = await getTokenPayload(AuthHeader)
     const res = await userService.getInfo(payload._id)
-    if(res){
-      ctx.body = successResponse('获取用户信息成功',res)
+    if (res) {
+      ctx.body = successResponse('获取用户信息成功', res)
     }
   }
 }

@@ -23,5 +23,4 @@ router.get('/user/:id', AdminController.getUserInfo)
 // 查找系统用户列表
 router.get('/users', AdminController.getsystemUserlist)
 
-
 module.exports = router

@@ -1,5 +1,5 @@
 class HttpExecption extends Error {
-  constructor(msg = '服务器异常',errorCode = 9999) {
+  constructor(msg = '服务器异常', errorCode = 9999) {
     super()
     this.msg = msg
     this.errorCode = errorCode
@@ -15,34 +15,35 @@ class ParameterException extends HttpExecption {
   }
 }
 
-
 // 禁止访问
-class ForbidenException extends HttpExecption{
-  constructor(msg,errorCode){
+class ForbidenException extends HttpExecption {
+  constructor(msg, errorCode) {
     super()
-    this.msg = msg || '没有权限访问',
-    this.errorCode = errorCode || 403
+    ;(this.msg = msg || '没有权限访问'), (this.errorCode = errorCode || 403)
   }
 }
-
 
 // 404
 class NotFoundException extends HttpExecption {
-  constructor(msg,errorCode){
+  constructor(msg, errorCode) {
     super()
-    this.msg = msg || '找不到资源',
-    this.errorCode = errorCode || 404
+    ;(this.msg = msg || '找不到资源'), (this.errorCode = errorCode || 404)
   }
 }
 
-
 // 已存在
 
-class AllReadyExistedException extends HttpExecption{
-  constructor(msg,errorCode){
+class AllReadyExistedException extends HttpExecption {
+  constructor(msg, errorCode) {
     super()
     this.msg = msg || '已存在'
     this.errorCode = errorCode || 10001
   }
 }
-module.exports = { HttpExecption, ParameterException , ForbidenException, NotFoundException, AllReadyExistedException}
+module.exports = {
+  HttpExecption,
+  ParameterException,
+  ForbidenException,
+  NotFoundException,
+  AllReadyExistedException,
+}

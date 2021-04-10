@@ -1,4 +1,3 @@
-
 const validator = require('validator')
 const { ParameterException } = require('./http-execption')
 const { get, last, set, cloneDeep } = require('lodash')
@@ -15,7 +14,7 @@ class LinValidator {
       body: ctx.request.body,
       query: ctx.request.query,
       path: ctx.params,
-      header: ctx.request.header
+      header: ctx.request.header,
     }
   }
 
@@ -38,7 +37,7 @@ class LinValidator {
       return true
     }
     if (this[key] instanceof Array) {
-      this[key].forEach(value => {
+      this[key].forEach((value) => {
         const isRuleType = value instanceof Rule
         if (!isRuleType) {
           throw new Error('验证数组必须全部为Rule类型')
@@ -56,7 +55,7 @@ class LinValidator {
     this.parsed = cloneDeep(params)
 
     const memberKeys = findMembers(this, {
-      filter: this._findMembersFilter.bind(this)
+      filter: this._findMembersFilter.bind(this),
     })
 
     const errorMsgs = []
@@ -108,12 +107,12 @@ class LinValidator {
       const msg = `${isCustomFunc ? '' : key}${result.msg}`
       return {
         msg: msg,
-        success: false
+        success: false,
       }
     }
     return {
       msg: 'ok',
-      success: true
+      success: true,
     }
   }
 
@@ -123,33 +122,33 @@ class LinValidator {
     if (value) {
       return {
         value,
-        path: ['query', key]
+        path: ['query', key],
       }
     }
     value = get(this.data, ['body', key])
     if (value) {
       return {
         value,
-        path: ['body', key]
+        path: ['body', key],
       }
     }
     value = get(this.data, ['path', key])
     if (value) {
       return {
         value,
-        path: ['path', key]
+        path: ['path', key],
       }
     }
     value = get(this.data, ['header', key])
     if (value) {
       return {
         value,
-        path: ['header', key]
+        path: ['header', key],
       }
     }
     return {
       value: null,
-      path: []
+      path: [],
     }
   }
 }
@@ -158,7 +157,7 @@ class RuleResult {
   constructor(pass, msg = '') {
     Object.assign(this, {
       pass,
-      msg
+      msg,
     })
   }
 }
@@ -175,7 +174,7 @@ class Rule {
     Object.assign(this, {
       name,
       msg,
-      params
+      params,
     })
   }
 
@@ -254,5 +253,5 @@ class RuleField {
 
 module.exports = {
   Rule,
-  LinValidator
+  LinValidator,
 }

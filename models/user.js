@@ -1,4 +1,4 @@
-const Mongoose  = require('../config/Mongoose')
+const Mongoose = require('../config/Mongoose')
 
 // 新建Schema
 const Schema = Mongoose.Schema
@@ -6,17 +6,16 @@ const UserSchema = new Schema({
   username: {
     type: String,
     unique: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
-  createdAt: { 
-    type: Date, 
-    default: Date.now 
-  }
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 })
 
-
-module.exports = Mongoose.model('User',UserSchema)
+module.exports = Mongoose.model('User', UserSchema)

@@ -11,10 +11,10 @@ const config = require('./config/config')
 app
   .use(cors())
   .use(exception)
-// 静态服务
+  // 静态服务
   .use(statics(path.join(__dirname,'./static')))
 // 这里需要配置不需要鉴权的路由
-  .use(JWT({ secret: config.JWT_SECRET }).unless({ path: [/^\/user\/register/,/^\/user\/login/,/^\/user\/verify/] }))
+  .use(JWT({ secret: config.JWT_SECRET }).unless({ path: [/^\/user\/register/,/^\/user\/login/,/^\/user\/verify/,/^\/static/] }))
 
 //  文件上传相关配置
   .use(koaBody({

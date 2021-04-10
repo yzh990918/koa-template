@@ -1,6 +1,10 @@
 const { successResponse } = require('../core/success')
 const adminService = require('../services/adminService')
-const { IdValidator, UserValidator, PageValidator } = require('../validator/validator')
+const {
+  IdValidator,
+  UserValidator,
+  PageValidator,
+} = require('../validator/validator')
 
 class AdminController {
   constructor() {}
@@ -48,14 +52,13 @@ class AdminController {
   // 查找系统用户列表
   async getsystemUserlist(ctx) {
     ctx.query.page = Number(ctx.query.page) || 0
-    ctx.query.limit =Number(ctx.query.limit) || 20
+    ctx.query.limit = Number(ctx.query.limit) || 20
     const v = await new PageValidator().validate(ctx)
     let payload = v.data.query
     let res = await adminService.getSystemUserlist(payload)
-    if(res){
-      ctx.body = successResponse('获取用户列表成功',res)
+    if (res) {
+      ctx.body = successResponse('获取用户列表成功', res)
     }
-
   }
 }
 

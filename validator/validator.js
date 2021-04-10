@@ -86,7 +86,7 @@ class PageValidator extends LinValidator {
       new Rule('isInt', '参数必须为正整数', { min: 0 }),
     ]
     this.limit = [
-      new Rule('isInt', '参数不能超过50', { min: 1, max: 50 }),
+      new Rule('isInt', '参数不能超过30', { min: 1, max: 30 }),
       new Rule('isOptional', 20),
     ]
   }

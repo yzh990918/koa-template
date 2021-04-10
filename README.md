@@ -83,8 +83,8 @@ Listening the 3000 port
 - [ ] upload file
 - [ ] upload fileList
 - [ ] destory a file
-- [ ] get a file 
-- [ ] show parge of files
+- [ ] get a file meta info
+- [ ] show page of files
 
 ## 🔏 How to use it
 

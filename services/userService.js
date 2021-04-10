@@ -59,36 +59,36 @@ class UserService {
   }
 
   // 修改密码
-  async modifyPwd(payload,id) {
+  async modifyPwd(payload, id) {
     // 判断当前是否存在用户
-      const user = await User.findById(id)
-      if (!user) {
-        throw new ForbidenException('请先登录')
-      }else{
-          if (payload.newPassword !== payload.renewPassword) {
-            throw new ParameterException('输入重复密码错误哦')
-          }
-          const sault = bcrypt.genSaltSync(10)
-          payload = {
-            username: user.username,
-            password: bcrypt.hashSync(payload.newPassword,sault)
-          }
-          return await User.updateOne(payload)
+    const user = await User.findById(id)
+    if (!user) {
+      throw new ForbidenException('请先登录')
+    } else {
+      if (payload.newPassword !== payload.renewPassword) {
+        throw new ParameterException('输入重复密码错误哦')
       }
+      const sault = bcrypt.genSaltSync(10)
+      payload = {
+        username: user.username,
+        password: bcrypt.hashSync(payload.newPassword, sault),
+      }
+      return await User.updateOne(payload)
+    }
   }
 
   // 获取当前用户信息
   async getInfo(id) {
     try {
       // 需要过滤密码
-      const user = await User.findOne({_id:id},{password: 0})
-      if(user){
+      const user = await User.findOne({ _id: id }, { password: 0 })
+      if (user) {
         return user
-      }else{
+      } else {
         throw new NotFoundException('寻找用户时发生错误')
       }
     } catch (error) {
-     throw new NotFoundException('寻找用户时发生错误')
+      throw new NotFoundException('寻找用户时发生错误')
     }
   }
 }
