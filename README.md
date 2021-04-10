@@ -31,7 +31,7 @@
 - ♻️ 基于 Mongoose 存储数据
 - 📚 基于 JWT AUTH 认证方式，支持重刷认证
 - 🚀 全局异常处理，特定异常抛出，统一接口返回标准，内置通用用户系统，内置通用文件系统，支持参数校验，内置分页器
-- ⛑  提供 API 接口文档，内置接口文档地址：[postman 接口文档](https://documenter.getpostman.com/view/10611320/TzCV34xY#1119f58a-9ea6-45f6-a467-9334e167980f)，[直接导入postman](postman://app/collections/import/10611320-d7d0f575-5b09-4e20-a3cd-83bff0244073-TzCV34xY?referrer=https%3A%2F%2Fdocumenter.getpostman.com%2Fview%2F10611320%2FTzCV34xY%231119f58a-9ea6-45f6-a467-9334e167980f&versionTag=latest#?)
+- ⛑  提供 API 接口文档，内置接口文档地址：[postman 接口文档](https://documenter.getpostman.com/view/10611320/TzCV3PuZ)，[直接导入postman](postman://app/collections/import/10611320-d7d0f575-5b09-4e20-a3cd-83bff0244073-TzCV34xY?referrer=https%3A%2F%2Fdocumenter.getpostman.com%2Fview%2F10611320%2FTzCV34xY%231119f58a-9ea6-45f6-a467-9334e167980f&versionTag=latest#?)
 
 
 ## 内置功能
