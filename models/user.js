@@ -1,6 +1,6 @@
 const Mongoose = require('../config/Mongoose')
 
-// 新建Schema
+// userSchema
 const Schema = Mongoose.Schema
 const UserSchema = new Schema({
   username: {

@@ -1,9 +1,3 @@
-/**
- * Lin-Validator v2
- * 作者：7七月
- * 微信公众号：林间有风
- */
-
 const validator = require('validator')
 const { ParameterException } = require('./http-execption')
 const { get, last, set, cloneDeep } = require('lodash')
