@@ -1,9 +1,10 @@
 const { HttpExecption } = require('../core/http-execption')
+const logger = require('../core/logger')
 // 定义全局异常中间件
 const eception = async (ctx, next) => {
   try {
     await next()
-   // 处理请求404异常
+    // 处理请求404异常
     if (ctx.status === 404) {
       ctx.body = {
         msg: '请求路由不存在',
@@ -13,6 +14,14 @@ const eception = async (ctx, next) => {
     }
   } catch (error) {
     const IsHttpexecption = error instanceof HttpExecption
+    // 开启日志服务
+    if (error.status !== 200) {
+      logger.error({
+        message: error.message,
+        request: `${ctx.method} ${ctx.path}`,
+        status: error.status,
+      })
+    }
     // 校验token
     if (error.status == 401) {
       ctx.body = {
