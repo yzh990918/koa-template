@@ -99,9 +99,6 @@ npm run dev
 
 ```json
 {
-  // 使用 IntelliSense 了解相关属性。 
-  // 悬停以查看现有属性的描述。
-  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
@@ -339,7 +336,7 @@ koa-template
 - [ ] 开发 `nestjs` 版模板
 ## 参与贡献
 
-欢迎提交 [Pull Request](https://github.com/251205668/koa-template/pulls) 或者和我z直接交流
+欢迎提交 [Pull Request](https://github.com/251205668/koa-template/pulls) 或者和我直接交流
 
 ## License
 
