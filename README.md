@@ -23,7 +23,7 @@
 > 前提说明: 
 > 1. 本项目需要有 `koa` 的基础，不熟悉的同学可以查看 [koa官方文档](https://www.koajs.com.cn/)
 > 2. 本项目需要有 `mongodb` 和 `mongoose`，不熟悉的同学可以查看 [mongdb官方文档](https://docs.mongodb.com/)，[mongoose官方文档](http://mongoosejs.net/)
-3. 拉下来项目之后需要切换至 `mongodb` 分支
+
 
 ### 特性:
 
