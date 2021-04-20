@@ -3,7 +3,6 @@ const { LinValidator, Rule } = require('../core/lin-validator-v2')
 class RegisterValidator extends LinValidator {
   constructor() {
     super()
-
     // 参数校验，可传入数组类型校验
     this.username = [
       new Rule('isLength', '用户名长度必须大于3并且小于20', {

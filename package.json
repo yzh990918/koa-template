@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format":"eslint --fix * --ext .js"
   },
   "keywords": [
     "nodejs",
@@ -16,7 +17,7 @@
     "@koa/cors": "3.1.0",
     "bcryptjs": "^2.4.3",
     "koa": "^2.7.0",
-    "koa-body":"4.2.0",
+    "koa-body": "4.2.0",
     "koa-bodyparser": "^4.2.1",
     "koa-jwt": "^4.0.0",
     "koa-router": "^7.4.0",
@@ -25,16 +26,16 @@
     "module-alias": "^2.2.0",
     "moment": "2.26.0",
     "mongodb": "3.5.7",
-    "uuid":"^8.3.2",
+    "uuid": "^8.3.2",
     "mongoose": "^5.9.15",
     "nodemailer": "6.4.6",
     "npm-check": "^5.9.0",
-    "make-dir":"^3.1.0",
+    "make-dir": "^3.1.0",
     "require-directory": "^2.1.1",
     "svg-captcha": "1.4.0",
     "validator": "^10.11.0",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file":"^4.5.2"
+    "winston-daily-rotate-file": "^4.5.2"
   },
   "directories": {
     "test": "test"

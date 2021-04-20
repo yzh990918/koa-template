@@ -10,7 +10,7 @@ class AdminController {
   constructor() {}
 
   // 删除指定id用户
-  async deleteOne(ctx, next) {
+  async deleteOne(ctx) {
     const v = await new IdValidator().validate(ctx)
     const id = v.data.path.id
     const res = await adminService.deleteOne(id)
@@ -31,7 +31,7 @@ class AdminController {
 
   // 修改用户的信息
   async updateUser(ctx) {
-    const v = await new UserValidator().validate(ctx)
+    await new UserValidator().validate(ctx)
     const payload = ctx.request.body || {}
     const res = await adminService.updateUserInfo(payload)
     if (res) {
