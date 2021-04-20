@@ -7,6 +7,12 @@ const {
 } = require('../core/http-execption')
 const bcrypt = require('bcryptjs')
 const { sign, verify } = require('../util/token.js')
+const { uploadPath, baseUrl } = require('../config/config.js')
+const moment = require('moment')
+const mkdir = require('make-dir')
+const { v4: uuid } = require('uuid')
+const fs = require('fs')
+const attachment = require('../models/attachment')
 class UserService {
   constructor() {}
 
@@ -89,6 +95,41 @@ class UserService {
       }
     } catch (error) {
       throw new NotFoundException('寻找用户时发生错误')
+    }
+  }
+
+  // 更新头像
+  async updateAvatarInfo(payload) {
+    const file = payload.file
+    const id = payload.id
+    const extraName = file.name.split('.')[1]
+    const dir = `${uploadPath}/${moment().format('YYYY-MM-DD')}`
+    await mkdir(dir)
+    const uu = uuid()
+    const realPath = `${dir}/${uu}.${extraName}`
+    const returnPath = `${moment().format(
+      'YYYY-MM-DD'
+    )}/${uu}.${extraName}`
+    const url = `${baseUrl.development}/${returnPath}`
+    // 读写文件
+    const reader = fs.createReadStream(file.path)
+    const upStream = fs.createWriteStream(realPath)
+    reader.pipe(upStream)
+
+    try {
+      // 存入数据
+      await attachment.create({
+        fileName:uu,
+        extraName,
+        creatorId:id,
+        path: returnPath,
+      })
+     const res = await User.updateOne({_id:id},{avatar: url})
+      if (res) {
+       return url
+      }
+    } catch (error) {
+      throw new ParameterException('更新头像失败')
     }
   }
 }

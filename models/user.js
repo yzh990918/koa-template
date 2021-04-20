@@ -12,6 +12,11 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  avatar: {
+    type: String,
+    required: true,
+    default: 'https://image.yangxiansheng.top/img/head.png?imglist'
+  },
   createdAt: {
     type: Date,
     default: Date.now,

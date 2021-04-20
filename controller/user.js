@@ -10,7 +10,7 @@ const { getTokenPayload } = require('../util/token')
 class UserController {
   constructor() {}
   // 注册
-  async register(ctx, next) {
+  async register(ctx) {
     // 参数校验 可在validator.js定义
     const v = await new RegisterValidator().validate(ctx)
     // 接受参数
@@ -23,7 +23,7 @@ class UserController {
   }
 
   // 登录
-  async login(ctx, next) {
+  async login(ctx) {
     // 校验参数
     const v = await new LoginValidator().validate(ctx)
     const payload = v.data.body || {}
@@ -34,7 +34,7 @@ class UserController {
   }
 
   // 验证token
-  async verify(ctx, next) {
+  async verify(ctx) {
     const v = await new TokenValidator().validate(ctx)
     const token = v.data.query.token
     const res = await userService.tokenVerify(token)
@@ -60,6 +60,20 @@ class UserController {
     const res = await userService.getInfo(payload._id)
     if (res) {
       ctx.body = successResponse('获取用户信息成功', res)
+    }
+  }
+
+  async updateAvatar(ctx) {
+    const file = ctx.request.files.file
+    const AuthHeader = ctx.request.header.authorization
+    const tokenPayload = await getTokenPayload(AuthHeader)
+
+    const res = await userService.updateAvatarInfo({
+      file,
+      id:tokenPayload._id
+    })
+    if(res) {
+      ctx.body = successResponse('更新头像成功',{url:res},)
     }
   }
 }

@@ -1,0 +1,5 @@
+{"message":{"message":"","request":"POST /user/register"},"level":"error"}
+{"message":"Authentication Error","request":"GET /files","status":401,"level":"error"}
+{"message":"Authentication Error","request":"DELETE /upload","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /user/getUserInfo","status":401,"level":"error"}
+{"message":"Authentication Error","request":"PUT /admin/user","status":401,"level":"error"}

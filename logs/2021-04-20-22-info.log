@@ -1,0 +1,23 @@
+{"message":"Authentication Error","request":"GET /admin/user/606db3f9021e1e6af44c76b8","status":401,"level":"error"}
+{"message":"Authentication Error","request":"PUT /user/repassword","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /files","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /files","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /file","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /favicon.ico","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /user/upload","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /favicon.ico","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /user/upload","status":401,"level":"error"}
+{"message":"Authentication Error","request":"POST /user/upload","status":401,"level":"error"}
+{"message":"Authentication Error","request":"POST /user/upload","status":401,"level":"error"}
+{"message":"Authentication Error","request":"POST /user/upload","status":401,"level":"error"}
+{"message":"Authentication Error","request":"POST /user/upload","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /user/avatar","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /favicon.ico","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /user/avatar","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /favicon.ico","status":401,"level":"error"}
+{"message":{"message":"","request":"POST /user/login"},"level":"error"}
+{"message":{"message":"","request":"POST /user/login"},"level":"error"}
+{"message":"Authentication Error","request":"DELETE /upload","status":401,"level":"error"}
+{"message":{"message":"","request":"POST /user/login"},"level":"error"}
+{"message":"Authentication Error","request":"GET /admin/users","status":401,"level":"error"}
+{"message":"Authentication Error","request":"GET /files","status":401,"level":"error"}

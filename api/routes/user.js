@@ -18,12 +18,10 @@ router.post('/login',UserController.login)
 router.get('/verify',UserController.verify)
 
 // 更改密码
-
 router.put('/repassword',UserController.updatePwd)
 
 // 获取当前登录用户信息
 
 router.get('/getUserInfo',UserController.getUserInfo)
-
 
 module.exports = router
